@@ -10,7 +10,7 @@ public class Task2WithDOWhile {
 
     public static void main(String[] args) {
         double a;
-        double e = 50;
+        double e = 0.0027; //M < e
         int i = 0;
 
         System.out.println("a_n = 1/(n+1)^2");
@@ -26,6 +26,6 @@ public class Task2WithDOWhile {
         while (a >= e);
         System.out.println();
         System.out.println("result:");
-        System.out.println("a min = " + a + " as i = " + i);
+        System.out.println("i = " + i);
     }
 }
