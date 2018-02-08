@@ -5,8 +5,9 @@ package javase01.t05;
  */
 public class TwoDimensionalArray {
     public static void main(String[] args) {
-        int x = 11;
+        int x = 11; //количество строк и столбцов
         int [] [] tda = new int[x][x];
+
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < x; j++) {
                 if (i == j || i == x - 1 - j)

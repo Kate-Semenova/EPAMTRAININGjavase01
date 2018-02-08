@@ -11,13 +11,16 @@ public class Function {
     // второй - соответствующие значения функции:
     //F(x)=tg(2x)-3
     public static void main(String[] args) {
-        int a = 0;
-        int b = 1;
-        double h = 0.5;
+        int a = -10;
+        int b = 10;
+        double h = 0.5; //шаг
         double f;
         for (double x = a; x <= b; x = x + h ) {
             f = Math.tan(2 * x) - 3;
-            System.out.println("f(x) = " + f + ", when x = " + x);
+            if (Math.round(f)==f) System.out.print("f(x) = ");
+            else System.out.print("f(x) ~ ");
+            System.out.println((double) Math.round(f*100)/100 + ", when x = " + x); //округление до сотых
+
         }
     }
 }
