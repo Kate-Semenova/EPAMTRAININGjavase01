@@ -14,7 +14,7 @@ public class Task2WithDOWhile {
         int i = 0;
 
         System.out.println("a_n = 1/(n+1)^2");
-        System.out.println("Uslovie:");
+        System.out.println("Condition:");
         System.out.println("a_n < " + e);
         System.out.println("Let`s find n");
         System.out.println();

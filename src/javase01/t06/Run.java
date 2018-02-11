@@ -12,7 +12,30 @@ public class Run {
     // Посмотреть все записи.
     //
     // Написать для данного кода javadoc-документацию.
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NullPointerException {
+        Notepad n = new Notepad();
 
+        n.showAllNotes();
+        System.out.println(n.num);
+        System.out.println();
+        n.rewriteNote(2, "df");
+        System.out.println(n.numberOfNotes());
+        n.addNote("hey you");
+        n.showAllNotes();
+        System.out.println(n.num);
+
+        n.addNote("hey you");
+        n.showAllNotes();
+        System.out.println(n.num);
+
+        n.deleteNote(2);
+        n.showAllNotes();
+        System.out.println(n.num);
+
+        n.rewriteNote(1, "good");
+        n.showAllNotes();
+
+        n.rewriteNote(2, "dkfdf");
+        n.showAllNotes();
     }
 }
