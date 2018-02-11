@@ -1,5 +1,7 @@
 package javase01.t02;
 
+import java.util.Scanner;
+
 /**
  * Created by Екатерина on 07.02.2018.
  */
@@ -15,9 +17,17 @@ public class Task2WithDOWhile {
 
         System.out.println("a_n = 1/(n+1)^2");
         System.out.println("Condition:");
+        System.out.println("a_n < e ");
+        System.out.print("Please specify e > 0 (example: 0,001): ");
+        Scanner in = new Scanner(System.in);
+        if(in.hasNextDouble()){
+            e = in.nextDouble();
+        }
         System.out.println("a_n < " + e);
+
         System.out.println("Let`s find n");
         System.out.println();
+
         do{
             i++;
             a = 1/(((double)i+1)*((double) i+1));
