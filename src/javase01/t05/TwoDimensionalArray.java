@@ -7,10 +7,10 @@ import java.util.Scanner;
  */
 public class TwoDimensionalArray {
     public static void main(String[] args) {
-        int x = 11; //количество строк и столбцов
+
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter the size of array");
-        x = in.nextInt();
+        System.out.print("Enter the size of array");
+        int x = in.nextInt();//количество строк и столбцов
         int [] [] tda = new int[x][x];
 
         for (int i = 0; i < x; i++) {
