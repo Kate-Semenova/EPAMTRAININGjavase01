@@ -37,7 +37,7 @@ public class Function {
             System.out.println("Enter positive step: ");
             h = in.nextDouble();
         }
-        //Или можно было не создавать новую переменную, а написать еще один цикл for для уловия (a > b)
+
         printFX(a);
         if (h < (b - a)){
             for (double x = a + h; x < b; x = x + h ) {
