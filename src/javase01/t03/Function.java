@@ -24,22 +24,38 @@ public class Function {
 
         System.out.print("Enter the step(example 0,5): ");
         double h = in.nextDouble(); //шаг
-        double f;
+        //double f = 0;
         if (a > b){ //Проверка на отрицательный шаг.
             double c = a;
             a = b;
             b = c;
             }
-        //Или можно было не создавать новую переменную, а написать еще один цикл for для уловия (a > b)
-        for (double x = a; x <= b; x = x + h ) {
-            f = Math.tan(2 * x) - 3;
-            if (Math.round(f)==f) {
-                System.out.print("f(x) = ");
-            }
-            else {
-                System.out.print("f(x) ~ ");
-            }
-            System.out.println((double) Math.round(f*100)/100 + ", when x = " + x); //округление до сотых
+        if (h < 0){
+            h = - h;
         }
+        while (h == 0){
+            System.out.println("Enter positive step: ");
+            h = in.nextDouble();
+        }
+        //Или можно было не создавать новую переменную, а написать еще один цикл for для уловия (a > b)
+        printFX(a);
+        if (h < (b - a)){
+            for (double x = a + h; x < b; x = x + h ) {
+                printFX(x);
+            }
+        }
+        if (a != b){
+            printFX(b);
+        }
+    }
+    private static void printFX (double x){
+        double f = Math.tan(2 * x) - 3;
+        if (Math.round(f)==f) {
+            System.out.print("f(x) = ");
+        }
+        else {
+            System.out.print("f(x) ~ ");
+        }
+        System.out.println((double) Math.round(f*100)/100 + ", when x = " + x); //округление до сотых
     }
 }
