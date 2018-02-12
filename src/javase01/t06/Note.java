@@ -6,6 +6,7 @@ package javase01.t06;
 public class Note {
     public String note = "hello"; //текст записи
     public int num = 1; //номер записи
+
     Note (String n){
         note = n;
 

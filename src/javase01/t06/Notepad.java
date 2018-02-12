@@ -3,24 +3,45 @@ package javase01.t06;
 /**
  * Created by Екатерина on 08.02.2018.
  */
+
+/**
+ * Класс блокнота
+ *
+ * @version 1.0
+ * @autor Semenova Ekaterina
+ */
 public class Notepad {
-    public String [] notes;
+    /**
+     * Массив записей в блокноте
+     */
+    public String[] notes;
+
+    /**
+     * Количество записей в блокноте
+     */
     public int num;
-    // Реализовать методы:
-    // Добавить запись,
-    // Удалить запись,
-    // Редактировать запись,
-    // Посмотреть все записи.
-    Notepad (){
+
+    /**
+     * Конструктор по умолчанию
+     */
+    Notepad() {
         notes = null;
         num = 0;
     }
-    Notepad (String [] notes){
+
+    /**
+     * Конструктор
+     * @param notes массив строк - записей в блокноте
+     */
+    Notepad(String[] notes) {
         this.notes = notes;
         num = notes.length;
     }
 
-    public void showAllNotes(){
+    /**
+     * Метод, показывает все записи в блокноте в виде номер_записи - запись
+     */
+    public void showAllNotes() {
         if (notes == null) System.out.println("Записей нет");
         else {
             for (int i = 0; i < notes.length; i++) {
@@ -30,26 +51,35 @@ public class Notepad {
         }
     }
 
-    public void addNote(String note){
+    /**
+     * Метод, добавляет новую запись в блокнот
+     *
+     * @param note запись
+     */
+    public void addNote(String note) {
         String newNotes[];
 
         if (notes == null) {
             newNotes = new String[1];
             newNotes[0] = note;
-        }
-        else {
+        } else {
             newNotes = new String[num + 1];
             for (int i = 0; i < num; i++) {
                 newNotes[i] = notes[i];
-                }
-            newNotes[num] = note;
             }
+            newNotes[num] = note;
+        }
         notes = newNotes;
         num = notes.length;
     }
 
-    public void deleteNote(int number){
-        if(num >= number) {
+    /**
+     * Метод, удаляет запись по номеру
+     *
+     * @param number номер записи
+     */
+    public void deleteNote(int number) {
+        if (num >= number) {
             String newNotes[] = new String[num - 1];
             for (int i = 0; i < number - 1; i++) {
                 newNotes[i] = notes[i];
@@ -59,19 +89,27 @@ public class Notepad {
             }
             notes = newNotes;
             num = notes.length;
-        }
-        else System.out.println("Нет записи с таким номером");
+        } else System.out.println("Нет записи с таким номером");
     }
 
-    public void rewriteNote (int number, String note){
+    /**
+     * Метод, редактирует запись
+     *
+     * @param number номер записи
+     * @param note   отредактированный текст записи
+     */
+    public void rewriteNote(int number, String note) {
 
-        if(num >= number) notes[number - 1] = note;
+        if (num >= number) notes[number - 1] = note;
         else System.out.println("Такой записи не существует");
     }
 
-    public int numberOfNotes (){
+    /**
+     * Метод, возвращает количество записей в блокноте
+     *
+     * @return количество записей
+     */
+    public int numberOfNotes() {
         return num;
     }
-
-
 }

@@ -37,5 +37,11 @@ public class Run {
 
         n.rewriteNote(2, "dkfdf");
         n.showAllNotes();
+        System.out.println();
+        for (int i = 0; i < 10; i++) {
+            n.addNote("hey you" + i);
+
+        }
+        n.showAllNotes();
     }
 }
