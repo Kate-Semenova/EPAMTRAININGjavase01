@@ -14,12 +14,12 @@ public class Notepad1 {
     /**
      * Массив записей в блокноте
      */
-    public Note[] notes;
+    private Note[] notes;
 
     /**
      * Количество записей в блокноте
      */
-    public int num;
+    private int num;
 
     /**
      * Конструктор по умолчанию
@@ -75,6 +75,14 @@ public class Notepad1 {
     }
 
     /**
+     * Метод добавляет новую запись в блокнот
+     * @param str Текст записи
+     */
+    public void addNote(String str){
+        addNote(new Note(str));
+    }
+
+    /**
      * Метод, удаляет запись по номеру
      *
      * @param number номер записи
@@ -90,14 +98,25 @@ public class Notepad1 {
             }
             notes = newNotes;
             num = notes.length;
-        } else System.out.println("Нет записи с таким номером");
+        } else System.out.println("Нет записи номер " + number);
+    }
+
+    /**
+     * Метод, удаляет записи по номерам
+     *
+     * @param numbers номер записи
+     */
+    public void deleteNote(int [] numbers){
+        for (int e: numbers) {
+            deleteNote(e);
+        }
     }
 
     /**
      * Метод, редактирует запись
      *
      * @param number номер записи
-     * @param note   отредактированный текст записи
+     * @param note   отредактированная запись
      */
     public void rewriteNote(int number, Note note) {
 
@@ -106,14 +125,23 @@ public class Notepad1 {
     }
 
     /**
+     * Метод, редактирует запись
+     *
+     * @param number номер записи
+     * @param str   отредактированный текст записи
+     */
+    public void  rewriteNote(int number, String str){
+        rewriteNote(number, new Note(str));
+    }
+    /**
      * Метод, возвращает количество записей в блокноте
      *
      * @return количество записей
      */
+
     public int getNumberOfNotes() {
         return num;
     }
-
     /**
      * Метод, возвращает запись по ее номеру
      * @param number Номер записи
@@ -122,6 +150,7 @@ public class Notepad1 {
     public Note getNoteByNumber(int number){
         return notes[number - 1];
     }
+
     /**
      * Метод, возвращает текст записи по ее номеру
      * @param number Номер записи
