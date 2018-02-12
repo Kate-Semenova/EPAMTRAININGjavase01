@@ -1,4 +1,6 @@
-package javase01.music;
+package javase01.music.types;
+
+import javase01.music.Instrument;
 
 /**
  * Created by Екатерина on 12.02.2018.
@@ -39,7 +41,7 @@ public class Wind extends Instrument {
     }
 
     @Override
-    void makeNoise() {
+    protected void makeNoise() {
         System.out.println("Tuuuu");
     }
 

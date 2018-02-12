@@ -1,7 +1,7 @@
-package javase01.music;
+package javase01.music.main;
 
+import javase01.music.types.Stringed;
 import javase01.music.Instrument;
-import javase01.music.Stringed;
 
 /**
  * Created by Екатерина on 12.02.2018.

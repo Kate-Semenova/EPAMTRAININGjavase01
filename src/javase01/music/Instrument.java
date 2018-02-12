@@ -5,7 +5,7 @@ package javase01.music;
  * Created by Екатерина on 12.02.2018.
  */
 //В идеале сделать класс Tune где бы прописывались герцы для нот, потому
-abstract class Instrument {
+public abstract class Instrument {
 
     /**
      * Вид инструмента
@@ -34,7 +34,7 @@ abstract class Instrument {
     /**
      * Звук инструмента
      */
-    abstract void makeNoise();
+    protected abstract void makeNoise();
 
     /**
      * Звук на конкретной ноте
@@ -83,7 +83,7 @@ abstract class Instrument {
     /**
      * @param i Диапазон
      */
-    void setRange(int i){
+    protected void setRange(int i){
 
         range = i;
     }
@@ -91,7 +91,7 @@ abstract class Instrument {
     /**
      * @return Самая низкая нота
      */
-    char getMin(){
+    public char getMin(){
 
         return min;
     }
@@ -109,7 +109,6 @@ abstract class Instrument {
      * @return Самая высокая нота
      */
     char getMax(){
-
         return min;
     }
 
@@ -117,7 +116,6 @@ abstract class Instrument {
      * @param c Самая высокая нота
      */
     public void setMax(char c) {
-
         max = c;
     }
 

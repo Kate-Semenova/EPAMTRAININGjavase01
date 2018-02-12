@@ -1,8 +1,10 @@
-package javase01.music;
+package javase01.music.types;
 
 /**
  * Created by Екатерина on 12.02.2018.
  */
+
+import javase01.music.Instrument;
 
 /**
  * Класс стунных инструментов
@@ -27,7 +29,7 @@ public class Stringed extends Instrument {
     /**
      * Конструктор
      */
-    Stringed() {
+    public Stringed() {
         setName("none");
         numberOfStrings = 0;
         tunings = null;
@@ -104,7 +106,7 @@ public class Stringed extends Instrument {
 
 
     @Override
-    void makeNoise() {
+    protected void makeNoise() {
         System.out.println("blink");
     }
 
