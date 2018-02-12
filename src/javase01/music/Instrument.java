@@ -8,26 +8,26 @@ abstract class Instrument {
     /**
      * Вид инструмента
      */
-    String type;
+    private String type;
     /**
     * Название
     */
-    String name;
+    private String name;
 
     /**
      * Диапазон инсрумента
      */
-    int range;
+    private int range;
 
     /**
      * Нижняя нота
      */
-    char min;
+    private char min;
 
     /**
      * Верхняя нота
      */
-    char max;
+    private char max;
 
     /**
      * Звук инструмента
@@ -42,5 +42,76 @@ abstract class Instrument {
         makeNoise();
         System.out.println(c);
     };
+
+    /**
+     * @return Тип музыкального инструмента
+     */
+    String getType(){
+        return type;
+    }
+
+    /**
+     * @param s Тип музыкального инструмента
+     */
+    void setType(String s){
+        type = s;
+    }
+
+    /**
+     * @return Название инструмента
+     */
+    String getName(){
+        return name;
+    }
+
+    /**
+     * @param s Название инструмента
+     */
+    void setName(String s){
+        name = s;
+    }
+
+    /**
+     * @return Диапазон
+     */
+    int getRange(){
+        return range;
+    }
+
+    /**
+     * @param i Диапазон
+     */
+    void setRange(int i){
+        range = i;
+    }
+
+    /**
+     * @return Самая низкая нота
+     */
+    char getMin(){
+        return min;
+    }
+
+    /**
+     * @param min Самая низкая нота
+     */
+    public void setMin(char min) {
+        this.min = min;
+    }
+
+
+    /**
+     * @return Самая высокая нота
+     */
+    char getMax(){
+        return min;
+    }
+
+    /**
+     * @param c Самая высокая нота
+     */
+    public void setMax(char c) {
+        max = c;
+    }
 
 }
