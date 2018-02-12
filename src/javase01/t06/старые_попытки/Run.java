@@ -1,4 +1,6 @@
-package javase01.t06;
+package javase01.t06.старые_попытки;
+
+import javase01.t06.старые_попытки.Notepad;
 
 /**
  * Created by Екатерина on 08.02.2018.

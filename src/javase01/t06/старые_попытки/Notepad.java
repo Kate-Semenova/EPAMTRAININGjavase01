@@ -1,4 +1,4 @@
-package javase01.t06;
+package javase01.t06.старые_попытки;
 
 /**
  * Created by Екатерина on 08.02.2018.
