@@ -39,12 +39,12 @@ public class Function {
         }
 
         printFX(a);
-        if (h < (b - a)){
-            for (double x = a + h; x < b; x = x + h ) {
-                printFX(x);
+        if (a != b){ //вынесла выше, а не отдельно, чтобы проверять меньше условий в случае
+            if (h < (b - a)){
+                for (double x = a + h; x < b; x = x + h ) {
+                    printFX(x);
+                }
             }
-        }
-        if (a != b){
             printFX(b);
         }
     }
