@@ -1,8 +1,10 @@
 package javase01.music;
 
 /**
+ *
  * Created by Екатерина on 12.02.2018.
  */
+//В идеале сделать класс Tune где бы прописывались герцы для нот, потому
 abstract class Instrument {
 
     /**
@@ -38,7 +40,7 @@ abstract class Instrument {
      * Звук на конкретной ноте
      * @param c
      */
-    void makeNoise(char c){
+    final protected void makeNoise(char c){ //FINAL
         makeNoise();
         System.out.println(c);
     };
@@ -46,14 +48,14 @@ abstract class Instrument {
     /**
      * @return Тип музыкального инструмента
      */
-    String getType(){
+    protected String getType(){
         return type;
     }
 
     /**
      * @param s Тип музыкального инструмента
      */
-    void setType(String s){
+    protected void setType(String s){
         type = s;
     }
 
@@ -67,14 +69,14 @@ abstract class Instrument {
     /**
      * @param s Название инструмента
      */
-    void setName(String s){
+    protected void setName(String s){
         name = s;
     }
 
     /**
      * @return Диапазон
      */
-    int getRange(){
+    protected int getRange(){
         return range;
     }
 
@@ -82,6 +84,7 @@ abstract class Instrument {
      * @param i Диапазон
      */
     void setRange(int i){
+
         range = i;
     }
 
@@ -89,6 +92,7 @@ abstract class Instrument {
      * @return Самая низкая нота
      */
     char getMin(){
+
         return min;
     }
 
@@ -96,6 +100,7 @@ abstract class Instrument {
      * @param min Самая низкая нота
      */
     public void setMin(char min) {
+
         this.min = min;
     }
 
@@ -104,6 +109,7 @@ abstract class Instrument {
      * @return Самая высокая нота
      */
     char getMax(){
+
         return min;
     }
 
@@ -111,6 +117,7 @@ abstract class Instrument {
      * @param c Самая высокая нота
      */
     public void setMax(char c) {
+
         max = c;
     }
 

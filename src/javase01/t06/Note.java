@@ -4,32 +4,47 @@ package javase01.t06;
  * Created by Екатерина on 08.02.2018.
  */
 public class Note {
-    public String note = "hello"; //текст записи
-    public int num = 1; //номер записи
+    /**
+     * Текст записи
+     */
+    private String note = "hello";
 
-    Note (String n){
-        note = n;
-
+    /**
+     * Конструктор
+     * @param note Текст записи
+     */
+    Note (String note){
+        this.note = note;
     }
 
-    public int getNum (){
-        return num;
-    }
-
+    /**
+     * Метод, возвращает текст записи
+     * @return Текст записи
+     */
     public String getNote(){
         return note;
     }
 
-    public void setNum(int n){
-        num = n;
-    };
+    /**
+     * Метод, переопредеяет текст записи
+     * @param note Новый текст записи
+     */
+    public void setNote(String note){
+        this.note = note;
+    }
 
+    /**
+     * Метод, присваивает значение одного Note другому
+     * @param n Запись
+     */
     public void prisvoit(Note n){
-        num = n.getNum();
         note = n.getNote();
     }
 
+    /**
+     * Вывод текста записи на консоль
+     */
     public void print(){
-        System.out.println(num + " - " + note);
+        System.out.println(note);
     }
 }
