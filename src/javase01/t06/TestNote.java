@@ -52,12 +52,12 @@ public class TestNote {
         notepad.deleteNote(new int[] {4, 5, 12, 6, 1});
         notepad.showAllNotes();
         System.out.println();
-/*
+
         System.out.println(String.format(
                 "Отредактируем строку номер %d с записью \"%s\"", 5, notepad.getNoteTextByNumber(5)));
         notepad.rewriteNote(5, new Note("I AM REWRITTEN"));
         notepad.showAllNotes();
-        System.out.println();*/
+        System.out.println();
 
 
     }
