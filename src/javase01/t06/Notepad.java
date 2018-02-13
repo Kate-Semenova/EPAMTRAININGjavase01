@@ -10,7 +10,7 @@ package javase01.t06;
  * @version 1.0
  * @autor Semenova Ekaterina
  */
-public class Notepad1 {
+public class Notepad {
     /**
      * Массив записей в блокноте
      */
@@ -22,30 +22,44 @@ public class Notepad1 {
     private int num;
 
     /**
+     * Размер массива по умолчанию
+     */
+    private final int def = 100;
+    /**
      * Конструктор по умолчанию
      */
-    Notepad1() {
-        notes = null;
+    public Notepad() {
+        notes = new Note[def];
         num = 0;
     }
 
     /**
      * Конструктор
-     * @param notes массив записей в блокноте
+     * @param n массив записей в блокноте
      */
-    Notepad1(Note[] notes) {
-        this.notes = notes;
-        num = notes.length;
+    public Notepad(Note[] n) {
+        num = n.length;
+        if (num <= def) {
+            new Notepad(); //Просто хочу чтобы сразу был массив с размером по умолчанию,
+                            // чтобы при дальнейшем добавлении создавать меньше экземпляров.
+                            //Надеюсь, я правильно понимаю вопрос оптимизации
+            for(int i = 0; i < num; i++){
+                notes[i] = n[i];
+            }
+        }
+        else {
+            notes = n;
+        }
     }
 
-    /**
+     /**
      * Метод, показывает все записи в блокноте в виде номер_записи - запись
      */
     public void showAllNotes() {
         if (notes == null) System.out.println("Записей нет");
         else {
             System.out.println("Записи блокнота: ");
-            for (int i = 0; i < notes.length; i++) {
+            for (int i = 0; i < num; i++) {
                 System.out.print(i + 1 + " - ");
                 notes[i].print();
             }
@@ -58,20 +72,17 @@ public class Notepad1 {
      * @param note запись
      */
     public void addNote(Note note) {
-        Note newNotes[];
-
-        if (notes == null) {
-            newNotes = new Note[1];
-            newNotes[0] = note;
-        } else {
-            newNotes = new Note[num + 1];
-            for (int i = 0; i < num; i++) {
+         if (notes.length == num){
+            Note [] newNotes = new Note[notes.length + def];
+            for(int i = 0; i < num; i++) {
                 newNotes[i] = notes[i];
             }
             newNotes[num] = note;
+            notes = newNotes;
+        } else {
+            notes[num] = note;
         }
-        notes = newNotes;
-        num = notes.length;
+        num++;
     }
 
     /**
@@ -79,6 +90,7 @@ public class Notepad1 {
      * @param str Текст записи
      */
     public void addNote(String str){
+
         addNote(new Note(str));
     }
 
@@ -89,16 +101,24 @@ public class Notepad1 {
      */
     public void deleteNote(int number) { //Написать еще метод для массива чисел
         if (num >= number) {
-            Note newNotes[] = new Note[num - 1];
-            for (int i = 0; i < number - 1; i++) {
+            for (int i = number; i < num; i++) {
+                notes[i - 1] = notes[i];
+            }
+            num--;
+        } else {
+            System.out.println("Нет записи номер " + number);
+        }
+        if(notes.length > num + def) { //Комментарий скорее для автора кода:
+                                        //Если вдруг массив стал слишком большим,
+                                        // то есть там "ненужных" элементов больше чем def
+                                        // тогда заводим новый массив нужного размера
+            Note [] newNotes = new Note[num + def];
+            for(int i = 0; i < num; i++){
                 newNotes[i] = notes[i];
             }
-            for (int i = number; i < num; i++) {
-                newNotes[i - 1] = notes[i];
-            }
             notes = newNotes;
-            num = notes.length;
-        } else System.out.println("Нет записи номер " + number);
+        }
+
     }
 
     /**
@@ -120,8 +140,12 @@ public class Notepad1 {
      */
     public void rewriteNote(int number, Note note) {
 
-        if (num >= number) notes[number - 1] = note;
-        else System.out.println("Такой записи не существует");
+        if (num >= number) {
+            notes[number - 1] = note;
+        }
+        else {
+            System.out.println("Такой записи не существует");
+        }
     }
 
     /**
@@ -131,6 +155,7 @@ public class Notepad1 {
      * @param str   отредактированный текст записи
      */
     public void  rewriteNote(int number, String str){
+
         rewriteNote(number, new Note(str));
     }
     /**

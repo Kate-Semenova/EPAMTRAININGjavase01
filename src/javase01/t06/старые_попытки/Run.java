@@ -1,7 +1,5 @@
 package javase01.t06.старые_попытки;
 
-import javase01.t06.старые_попытки.Notepad;
-
 /**
  * Created by Екатерина on 08.02.2018.
  */
@@ -15,7 +13,7 @@ public class Run {
     //
     // Написать для данного кода javadoc-документацию.
     public static void main(String[] args) throws NullPointerException {
-        Notepad n = new Notepad();
+        Notepad2 n = new Notepad2();
 
         n.showAllNotes();
         System.out.println(n.num);

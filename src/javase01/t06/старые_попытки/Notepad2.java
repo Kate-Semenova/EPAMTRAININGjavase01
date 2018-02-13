@@ -10,7 +10,7 @@ package javase01.t06.старые_попытки;
  * @version 1.0
  * @autor Semenova Ekaterina
  */
-public class Notepad {
+public class Notepad2 {
     /**
      * Массив записей в блокноте
      */
@@ -24,7 +24,7 @@ public class Notepad {
     /**
      * Конструктор по умолчанию
      */
-    Notepad() {
+    Notepad2() {
         notes = null;
         num = 0;
     }
@@ -33,7 +33,7 @@ public class Notepad {
      * Конструктор
      * @param notes массив строк - записей в блокноте
      */
-    Notepad(String[] notes) {
+    Notepad2(String[] notes) {
         this.notes = notes;
         num = notes.length;
     }

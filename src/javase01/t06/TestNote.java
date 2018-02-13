@@ -6,7 +6,7 @@ package javase01.t06;
 //Что усовершенствовать:
     //сделать addNote и rewriteNote  с аргументом String, а не Note - DONE
     //возможность дать массив int [] методу deleteNote() - DONE
-public class testNote {
+public class TestNote {
     public static void main(String[] args) {
         System.out.println("Создадим новую запись");
         Note note = new Note("Hello");
@@ -22,7 +22,7 @@ public class testNote {
 
         System.out.println("Создадим блокнот, куда поместим нашу запись");
         Note notes [] = {note};
-        Notepad1 notepad = new Notepad1(notes);
+        Notepad notepad = new Notepad(notes);
 
         notepad.showAllNotes();
         System.out.println();
@@ -34,7 +34,6 @@ public class testNote {
 
         System.out.println("Количество записей: " + notepad.getNumberOfNotes());
         System.out.println();
-
         System.out.println("Добавим еще 10 записей");
         for (int i = 0; i < 10; i++) {
             notepad.addNote("hey you " + i);
@@ -53,12 +52,12 @@ public class testNote {
         notepad.deleteNote(new int[] {4, 5, 12, 6, 1});
         notepad.showAllNotes();
         System.out.println();
-
+/*
         System.out.println(String.format(
                 "Отредактируем строку номер %d с записью \"%s\"", 5, notepad.getNoteTextByNumber(5)));
         notepad.rewriteNote(5, new Note("I AM REWRITTEN"));
         notepad.showAllNotes();
-        System.out.println();
+        System.out.println();*/
 
 
     }

@@ -7,13 +7,14 @@ public class Note {
     /**
      * Текст записи
      */
-    private String note = "hello";
+    private String note;
 
     /**
      * Конструктор
      * @param note Текст записи
      */
-    Note (String note){
+    protected Note (String note){
+
         this.note = note;
     }
 
@@ -22,6 +23,7 @@ public class Note {
      * @return Текст записи
      */
     public String getNote(){
+
         return note;
     }
 
@@ -30,6 +32,7 @@ public class Note {
      * @param note Новый текст записи
      */
     public void setNote(String note){
+
         this.note = note;
     }
 
