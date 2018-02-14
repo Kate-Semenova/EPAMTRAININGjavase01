@@ -24,12 +24,12 @@ public class Notepad {
     /**
      * Размер массива по умолчанию
      */
-    private final int def = 100;
+    private final int DEF = 100;
     /**
      * Конструктор по умолчанию
      */
     public Notepad() {
-        notes = new Note[def];
+        notes = new Note[DEF];
         num = 0;
     }
 
@@ -39,8 +39,8 @@ public class Notepad {
      */
     public Notepad(Note[] n) {
         num = n.length;
-        if (num <= def) {
-            notes = new Note[def]; //Просто хочу чтобы сразу был массив с размером по умолчанию,
+        if (num <= DEF) {
+            notes = new Note[DEF]; //Просто хочу чтобы сразу был массив с размером по умолчанию,
                                 // чтобы при дальнейшем добавлении создавать меньше экземпляров.
                                 //Надеюсь, я правильно понимаю вопрос оптимизации
             for(int i = 0; i < num; i++){
@@ -73,7 +73,7 @@ public class Notepad {
      */
     public void addNote(Note note) {
          if (notes.length == num){
-            Note [] newNotes = new Note[notes.length + def];
+            Note [] newNotes = new Note[notes.length + DEF];
             for(int i = 0; i < num; i++) {
                 newNotes[i] = notes[i];
             }
@@ -108,11 +108,11 @@ public class Notepad {
         } else {
             System.out.println("Нет записи номер " + number);
         }
-        if(notes.length > num + def) { //Комментарий скорее для автора кода:
+        if(notes.length > num + DEF) { //Комментарий скорее для автора кода:
                                         //Если вдруг массив стал слишком большим,
-                                        // то есть там "ненужных" элементов больше чем def
+                                        // то есть там "ненужных" элементов больше чем DEF
                                         // тогда заводим новый массив нужного размера
-            Note [] newNotes = new Note[num + def];
+            Note [] newNotes = new Note[num + DEF];
             for(int i = 0; i < num; i++){
                 newNotes[i] = notes[i];
             }
