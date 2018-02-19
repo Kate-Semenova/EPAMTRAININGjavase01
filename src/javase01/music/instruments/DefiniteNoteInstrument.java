@@ -1,11 +1,14 @@
-package javase01.music;
+package javase01.music.instruments;
+
+import javase01.music.note.AllNotes;
 
 /**
  *
  * Created by Екатерина on 12.02.2018.
+ * Абстрактный класс. Инструменты с определенной высотой звучания
  */
 //В идеале сделать класс Tune где бы прописывались герцы для нот, потому
-public abstract class Instrument {
+public abstract class DefiniteNoteInstrument implements DefiniteNote {
 
     /**
      * Вид инструмента
@@ -24,66 +27,56 @@ public abstract class Instrument {
     /**
      * Нижняя нота
      */
-    private char min;
+    private AllNotes min;
 
     /**
      * Верхняя нота
      */
-    private char max;
+    private AllNotes max;
 
-    /**
-     * Звук инструмента
-     */
-    protected abstract void makeNoise();
-
-    /**
-     * Звук на конкретной ноте
-     * @param c
-     */
-    final protected void makeNoise(char c){ //FINAL
-        makeNoise();
-        System.out.println(c);
-    };
 
     /**
      * @return Тип музыкального инструмента
      */
-    protected String getType(){
+    @Override
+    public String getType(){
         return type;
     }
 
     /**
      * @param s Тип музыкального инструмента
      */
-    protected void setType(String s){
+    @Override
+    public void setType(String s){
         type = s;
     }
 
     /**
      * @return Название инструмента
      */
-    String getName(){
+    @Override
+    public String getName(){
         return name;
     }
 
     /**
      * @param s Название инструмента
      */
-    protected void setName(String s){
+    public void setName(String s){
         name = s;
     }
 
     /**
      * @return Диапазон
      */
-    protected int getRange(){
+    public int getRange(){
         return range;
     }
 
     /**
      * @param i Диапазон
      */
-    protected void setRange(int i){
+    public void setRange(int i){
 
         range = i;
     }
@@ -91,32 +84,36 @@ public abstract class Instrument {
     /**
      * @return Самая низкая нота
      */
-    public char getMin(){
-
+    public AllNotes getMin(){
         return min;
     }
 
     /**
      * @param min Самая низкая нота
      */
-    public void setMin(char min) {
-
+    public void setMin(AllNotes min) {
         this.min = min;
     }
 
-
+    public void setMin(String min){
+        this.min = new AllNotes(min, 1);
+    }
     /**
      * @return Самая высокая нота
      */
-    char getMax(){
+    public AllNotes getMax(){
         return min;
     }
 
     /**
-     * @param c Самая высокая нота
+     * @param max Самая высокая нота
      */
-    public void setMax(char c) {
-        max = c;
+    public void setMax(AllNotes max) {
+        this.max = max;
+    }
+
+    public void setMax(String max){
+        this.max = new AllNotes(max, 2);
     }
 
 }

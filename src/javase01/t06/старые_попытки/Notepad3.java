@@ -4,7 +4,7 @@
 // * Created by Екатерина on 08.02.2018.
 // */
 //
-//import javase01.t06.Note;
+//import javase01.t06.AllNotes;
 //
 ///**
 // * Класс блокнота
@@ -16,7 +16,7 @@
 //    /**
 //     * Массив записей в блокноте
 //     */
-//    private Note[] notes;
+//    private AllNotes[] notes;
 //
 //    /**
 //     * Количество записей в блокноте
@@ -35,7 +35,7 @@
 //     * Конструктор
 //     * @param notes массив записей в блокноте
 //     */
-//    Notepad3(Note[] notes) {
+//    Notepad3(AllNotes[] notes) {
 //        this.notes = notes;
 //        num = notes.length;
 //    }
@@ -59,14 +59,14 @@
 //     *
 //     * @param note запись
 //     */
-//    public void addNote(Note note) {
-//        Note newNotes[];
+//    public void addNote(AllNotes note) {
+//        AllNotes newNotes[];
 //
 //        if (notes == null) {
-//            newNotes = new Note[1];
+//            newNotes = new AllNotes[1];
 //            newNotes[0] = note;
 //        } else {
-//            newNotes = new Note[num + 1];
+//            newNotes = new AllNotes[num + 1];
 //            for (int i = 0; i < num; i++) {
 //                newNotes[i] = notes[i];
 //            }
@@ -81,7 +81,7 @@
 //     * @param str Текст записи
 //     */
 //    public void addNote(String str){
-//        addNote(new Note(str));
+//        addNote(new AllNotes(str));
 //    }
 //
 //    /**
@@ -91,7 +91,7 @@
 //     */
 //    public void deleteNote(int number) { //Написать еще метод для массива чисел
 //        if (num >= number) {
-//            Note newNotes[] = new Note[num - 1];
+//            AllNotes newNotes[] = new AllNotes[num - 1];
 //            for (int i = 0; i < number - 1; i++) {
 //                newNotes[i] = notes[i];
 //            }
@@ -120,7 +120,7 @@
 //     * @param number номер записи
 //     * @param note   отредактированная запись
 //     */
-//    public void rewriteNote(int number, Note note) {
+//    public void rewriteNote(int number, AllNotes note) {
 //
 //        if (num >= number) notes[number - 1] = note;
 //        else System.out.println("Такой записи не существует");
@@ -133,7 +133,7 @@
 //     * @param str   отредактированный текст записи
 //     */
 //    public void  rewriteNote(int number, String str){
-//        rewriteNote(number, new Note(str));
+//        rewriteNote(number, new AllNotes(str));
 //    }
 //    /**
 //     * Метод, возвращает количество записей в блокноте
@@ -149,7 +149,7 @@
 //     * @param number Номер записи
 //     * @return Запись
 //     */
-//    public Note getNoteByNumber(int number){
+//    public AllNotes getNoteByNumber(int number){
 //        return notes[number - 1];
 //    }
 //

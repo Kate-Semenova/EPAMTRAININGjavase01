@@ -3,6 +3,8 @@ package javase01.t06;
 /**
  * Created by Екатерина on 08.02.2018.
  */
+
+//TODO отредактировать документацию
 public class Note {
     /**
      * Текст записи
@@ -13,7 +15,7 @@ public class Note {
      * Конструктор
      * @param note Текст записи
      */
-    protected Note (String note){
+    public Note (String note){
 
         this.note = note;
     }
@@ -37,7 +39,7 @@ public class Note {
     }
 
     /**
-     * Метод, присваивает значение одного Note другому
+     * Метод, присваивает значение одного AllNotes другому
      * @param n Запись
      */
     public void prisvoit(Note n){

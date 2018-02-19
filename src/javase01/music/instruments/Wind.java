@@ -1,11 +1,9 @@
-package javase01.music.types;
-
-import javase01.music.Instrument;
+package javase01.music.instruments;
 
 /**
  * Created by Екатерина on 12.02.2018.
  */
-public class Wind extends Instrument {
+public class Wind extends DefiniteNoteInstrument {
 
     {
         setType("wind");
@@ -28,8 +26,8 @@ public class Wind extends Instrument {
         switch (s.toLowerCase()) {
             case "horn": {
                 material = true;
-                setMin(' ');
-                setMax(' ');
+                //setMin(' ');
+               // setMax(' ');
                 setRange(0);
                 break;
             }
@@ -38,11 +36,6 @@ public class Wind extends Instrument {
                 break;
             }
         }
-    }
-
-    @Override
-    protected void makeNoise() {
-        System.out.println("Tuuuu");
     }
 
 
@@ -74,4 +67,11 @@ public class Wind extends Instrument {
             }
         }
     }
+
+    @Override
+    public void play() {
+        System.out.println("tuuu-tuu-tu");
+    }
+
+
 }

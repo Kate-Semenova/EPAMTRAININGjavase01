@@ -4,7 +4,7 @@ package javase01.t06;
  * Created by Екатерина on 12.02.2018.
  */
 //Что усовершенствовать:
-    //сделать addNote и rewriteNote  с аргументом String, а не Note - DONE
+    //сделать addNote и rewriteNote  с аргументом String, а не AllNotes - DONE
     //возможность дать массив int [] методу deleteNote() - DONE
 public class TestNote {
     public static void main(String[] args) {
