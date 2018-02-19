@@ -19,18 +19,18 @@ public class Notepad {
     /**
      * Количество записей в блокноте
      */
-    private int num;
+    private int amountOfNotes;
 
     /**
      * Размер массива по умолчанию
      */
-    private final int DEF = 100;
+    private final int DEFAULT_AMOUT_OF_NOTES = 100;
     /**
      * Конструктор по умолчанию
      */
     public Notepad() {
-        notes = new Note[DEF];
-        num = 0;
+        notes = new Note[DEFAULT_AMOUT_OF_NOTES];
+        amountOfNotes = 0;
     }
 
     /**
@@ -38,12 +38,12 @@ public class Notepad {
      * @param n массив записей в блокноте
      */
     public Notepad(Note[] n) {
-        num = n.length;
-        if (num <= DEF) {
-            notes = new Note[DEF]; //Просто хочу чтобы сразу был массив с размером по умолчанию,
+        amountOfNotes = n.length;
+        if (amountOfNotes <= DEFAULT_AMOUT_OF_NOTES) {
+            notes = new Note[DEFAULT_AMOUT_OF_NOTES]; //Просто хочу чтобы сразу был массив с размером по умолчанию,
                                 // чтобы при дальнейшем добавлении создавать меньше экземпляров.
                                 //Надеюсь, я правильно понимаю вопрос оптимизации
-            for(int i = 0; i < num; i++){
+            for(int i = 0; i < amountOfNotes; i++){
                 notes[i] = n[i];
             }
         }
@@ -59,7 +59,7 @@ public class Notepad {
         if (notes == null) System.out.println("Записей нет");
         else {
             System.out.println("Записи блокнота: ");
-            for (int i = 0; i < num; i++) {
+            for (int i = 0; i < amountOfNotes; i++) {
                 System.out.print(i + 1 + " - ");
                 notes[i].print();
             }
@@ -72,17 +72,17 @@ public class Notepad {
      * @param note запись
      */
     public void addNote(Note note) {
-         if (notes.length == num){
-            Note [] newNotes = new Note[notes.length + DEF];
-            for(int i = 0; i < num; i++) {
+         if (notes.length == amountOfNotes){
+            Note [] newNotes = new Note[notes.length + DEFAULT_AMOUT_OF_NOTES];
+            for(int i = 0; i < amountOfNotes; i++) {
                 newNotes[i] = notes[i];
             }
-            newNotes[num] = note;
+            newNotes[amountOfNotes] = note;
             notes = newNotes;
         } else {
-            notes[num] = note;
+            notes[amountOfNotes] = note;
         }
-        num++;
+        amountOfNotes++;
     }
 
     /**
@@ -100,20 +100,20 @@ public class Notepad {
      * @param number номер записи
      */
     public void deleteNote(int number) { //Написать еще метод для массива чисел
-        if (num >= number) {
-            for (int i = number; i < num; i++) {
+        if (amountOfNotes >= number) {
+            for (int i = number; i < amountOfNotes; i++) {
                 notes[i - 1] = notes[i];
             }
-            num--;
+            amountOfNotes--;
         } else {
             System.out.println("Нет записи номер " + number);
         }
-        if(notes.length > num + DEF) { //Комментарий скорее для автора кода:
+        if(notes.length > amountOfNotes + DEFAULT_AMOUT_OF_NOTES) { //Комментарий скорее для автора кода:
                                         //Если вдруг массив стал слишком большим,
-                                        // то есть там "ненужных" элементов больше чем DEF
+                                        // то есть там "ненужных" элементов больше чем DEFAULT_AMOUT_OF_NOTES
                                         // тогда заводим новый массив нужного размера
-            Note [] newNotes = new Note[num + DEF];
-            for(int i = 0; i < num; i++){
+            Note [] newNotes = new Note[amountOfNotes + DEFAULT_AMOUT_OF_NOTES];
+            for(int i = 0; i < amountOfNotes; i++){
                 newNotes[i] = notes[i];
             }
             notes = newNotes;
@@ -140,7 +140,7 @@ public class Notepad {
      */
     public void rewriteNote(int number, Note note) {
 
-        if (num >= number) {
+        if (amountOfNotes >= number) {
             notes[number - 1] = note;
         }
         else {
@@ -165,7 +165,7 @@ public class Notepad {
      */
 
     public int getNumberOfNotes() {
-        return num;
+        return amountOfNotes;
     }
     /**
      * Метод, возвращает запись по ее номеру

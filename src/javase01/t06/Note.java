@@ -42,7 +42,7 @@ public class Note {
      * Метод, присваивает значение одного AllNotes другому
      * @param n Запись
      */
-    public void prisvoit(Note n){
+    public void place(Note n){
         note = n.getNote();
     }
 
