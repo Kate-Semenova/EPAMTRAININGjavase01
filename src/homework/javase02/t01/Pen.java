@@ -3,10 +3,13 @@ package homework.javase02.t01;
 /**
  * Created by Ekaterina Semenova on 21.02.2018.
  */
-/*Задание 1. Принципы ООП, простейшие классы и объекты
+/*Задание 1. Принципы ООП,
+простейшие классы и объекты
 
-Разработайте спецификацию и создайте класс Ручка (Pen).
-Определите в этом классе методы equals(), hashCode() и toString().
+Разработайте спецификацию и
+создайте класс Ручка (Pen).
+Определите в этом классе
+методы equals(), hashCode() и toString().
 */
 public class Pen {
     //Color color;
@@ -51,7 +54,7 @@ public class Pen {
     private String manufacturerCompany;
     private double prise;*/
         final int prime = 37;
-        int result = 17;
+        int result = 1;
         result = prime * result + (color == null ? 0 : color.hashCode());
         result = prime * result + (cap ? 1 : 0);
         result = prime * result + (manufacturerCompany == null ? 0 : manufacturerCompany.hashCode());
