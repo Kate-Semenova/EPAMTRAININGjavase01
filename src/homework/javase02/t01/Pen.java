@@ -35,10 +35,25 @@ public class Pen {
         }
         if (anObject instanceof Pen){
             Pen anotherPen = (Pen)anObject;
-            if (color == null && anotherPen.getColor() == null)
+            if (color == null && anotherPen.getColor()!=null){
+                return false;
+            }
+            if(manufacturerCompany == null && anotherPen.getManufacturerCompany() !=null){
+                return false;
+            }
+            if (color != null && anotherPen.getColor()== null){
+                return false;
+            }
+            if(manufacturerCompany != null && anotherPen.getManufacturerCompany() == null){
+                return false;
+            }
+
+            if (color == null && anotherPen.getColor() == null){
                 return true;
-            if (manufacturerCompany == null && anotherPen.getManufacturerCompany() == null)
+            }
+            if (manufacturerCompany == null && anotherPen.getManufacturerCompany() == null) {
                 return true;
+            }
             return color.equals(anotherPen.getColor())&&
                     cap == anotherPen.isCap()&&
                     manufacturerCompany.equals(anotherPen.getManufacturerCompany())&&
