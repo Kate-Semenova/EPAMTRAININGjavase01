@@ -10,11 +10,21 @@ package homework.javase02.t01;
 */
 public class Pen {
     //Color color;
-   private String color;
+    private String color;
     private boolean cap; //колпачок
     private String manufacturerCompany;
     private double prise;
 
+    public Pen(String color, String manufacturerCompany, double prise){
+        this.color = color;
+        this.manufacturerCompany = manufacturerCompany;
+        this.prise = prise;
+    }
+
+    public Pen(String color, String manufacturerCompany, double prise, boolean cap){
+        this(color, manufacturerCompany, prise);
+        this.cap = cap;
+    }
     @Override
     public boolean equals(Object anObject){
         if (this == anObject) {
