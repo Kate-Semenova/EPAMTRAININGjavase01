@@ -35,24 +35,24 @@ public class Pen {
         }
         if (anObject instanceof Pen){
             Pen anotherPen = (Pen)anObject;
-            if (color == null && anotherPen.getColor()!=null){
-                return false;
-            }
-            if(manufacturerCompany == null && anotherPen.getManufacturerCompany() !=null){
-                return false;
-            }
-            if (color != null && anotherPen.getColor()== null){
-                return false;
-            }
-            if(manufacturerCompany != null && anotherPen.getManufacturerCompany() == null){
+            if (color == null && anotherPen.getColor()!=null
+                    || manufacturerCompany == null && anotherPen.getManufacturerCompany() !=null
+                    || anotherPen.getColor()== null && color != null
+                    || anotherPen.getManufacturerCompany() == null && manufacturerCompany != null){
                 return false;
             }
 
-            if (color == null && anotherPen.getColor() == null){
-                return true;
+            if (color == null && anotherPen.getColor() == null
+                    && manufacturerCompany != null && anotherPen.getManufacturerCompany() != null){
+                return cap == anotherPen.isCap()&&
+                        manufacturerCompany.equals(anotherPen.getManufacturerCompany())&&
+                        prise == anotherPen.getPrise();
             }
-            if (manufacturerCompany == null && anotherPen.getManufacturerCompany() == null) {
-                return true;
+            if (manufacturerCompany == null && anotherPen.getManufacturerCompany() == null
+                    && color != null && anotherPen.getColor() != null ) {
+                return color.equals(anotherPen.getColor())&&
+                        cap == anotherPen.isCap()&&
+                        prise == anotherPen.getPrise();
             }
             return color.equals(anotherPen.getColor())&&
                     cap == anotherPen.isCap()&&
