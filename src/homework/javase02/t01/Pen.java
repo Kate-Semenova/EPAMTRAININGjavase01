@@ -114,7 +114,7 @@ public class Pen {
         return manufacturerCompany;
     }
 
-    public void setManufacturerCompany(String manufacturerCompany) {
+     public void setManufacturerCompany(String manufacturerCompany) {
         this.manufacturerCompany = manufacturerCompany;
     }
 
