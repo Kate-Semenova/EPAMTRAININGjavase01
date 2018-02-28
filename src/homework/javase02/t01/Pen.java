@@ -12,7 +12,7 @@ package homework.javase02.t01;
 методы equals(), hashCode() и toString().
 */
 public class Pen {
-    //Color color;
+
     private String color;
     private boolean cap; //колпачок
     private String manufacturerCompany;
@@ -54,10 +54,6 @@ public class Pen {
 
     @Override
     public int hashCode() {
-        /* private String color;
-    private boolean cap; //колпачок
-    private String manufacturerCompany;
-    private double prise;*/
         final int prime = 37;
         int result = 1;
         result = prime * result + (color == null ? 0 : color.hashCode());
