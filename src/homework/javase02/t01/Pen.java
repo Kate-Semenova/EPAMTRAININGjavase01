@@ -33,31 +33,21 @@ public class Pen {
         if (this == anObject) {
             return true;
         }
-        if (anObject instanceof Pen){
+        if (anObject != null && anObject instanceof Pen){
             Pen anotherPen = (Pen)anObject;
-            if (color == null && anotherPen.getColor()!=null
-                    || manufacturerCompany == null && anotherPen.getManufacturerCompany() !=null
-                    || anotherPen.getColor()== null && color != null
-                    || anotherPen.getManufacturerCompany() == null && manufacturerCompany != null){
+            if(!color.equals(anotherPen.getColor())){
                 return false;
             }
-
-            if (color == null && anotherPen.getColor() == null
-                    && manufacturerCompany != null && anotherPen.getManufacturerCompany() != null){
-                return cap == anotherPen.isCap()&&
-                        manufacturerCompany.equals(anotherPen.getManufacturerCompany())&&
-                        prise == anotherPen.getPrise();
+            if(cap != (anotherPen.hasCap())){
+                return false;
             }
-            if (manufacturerCompany == null && anotherPen.getManufacturerCompany() == null
-                    && color != null && anotherPen.getColor() != null ) {
-                return color.equals(anotherPen.getColor())&&
-                        cap == anotherPen.isCap()&&
-                        prise == anotherPen.getPrise();
+            if(!manufacturerCompany.equals(anotherPen.getManufacturerCompany())){
+                return false;
             }
-            return color.equals(anotherPen.getColor())&&
-                    cap == anotherPen.isCap()&&
-                    manufacturerCompany.equals(anotherPen.getManufacturerCompany())&&
-                    prise == anotherPen.getPrise();
+            if(prise != anotherPen.getPrise()){
+                return false;
+            }
+            return true;
         }
         return false;
     }
@@ -102,7 +92,7 @@ public class Pen {
         this.color = color;
     }
 
-    public boolean isCap() {
+    public boolean hasCap() {
         return cap;
     }
 
